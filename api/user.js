@@ -1,4 +1,4 @@
-import { getUser } from "../utils/roblox.js";
+import { getUser } from "./utils/roblox.js";
 
 export default async function handler(req, res) {
 
