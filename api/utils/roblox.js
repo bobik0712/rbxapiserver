@@ -129,11 +129,19 @@ export async function getPresence(userId) {
 
 export async function getAvatars(userIds) {
 
+    if (userIds.length === 0) {
+        return [];
+    }
+
     const ids = userIds.join(",");
+
+    console.log("Avatar IDs:", ids);
 
     const data = await robloxRequest(
         `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${ids}&size=180x180&format=Png&isCircular=false`
     );
+
+    console.log(data);
 
     return data.data;
 
